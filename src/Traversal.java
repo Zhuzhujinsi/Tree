@@ -87,7 +87,7 @@ public class Traversal {
         while (temp != null || !stack1.isEmpty()) {
             while (temp != null) {
                 stack1.push(temp);//将当前节点插入stack1中
-                stack2.push(left);//接下来处理stack1中对应的当前节点的左子树！
+                stack2.push(left);//接下来处理stack1中对应的当前节点的左子树，所以下一行是.left!
                 temp = temp.left;
             }
 
@@ -97,7 +97,7 @@ public class Traversal {
             }
             if (!stack1.isEmpty() && stack2.peek() == 1) {//如果是从左子树返回的父节点，则将标记改为右子树
                 stack2.pop();
-                stack2.push(right);
+                stack2.push(right);//接下来处理stack1种对应的当前节点的右子树，所以下一行是.right!
                 temp = stack1.peek().right;
             }
         }
